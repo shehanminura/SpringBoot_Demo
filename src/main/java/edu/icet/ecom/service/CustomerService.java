@@ -11,4 +11,6 @@ public interface CustomerService  {
     List<Customer> getCustomer();
 
     void deleteStudentById(Integer id);
+
+    List<Customer> findByName(String name);
 }

@@ -6,7 +6,6 @@ import edu.icet.ecom.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,4 +30,11 @@ public class CustomerServiceImpl implements CustomerService {
     public void deleteStudentById(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public List<Customer> findByName(String name) {
+        return repository.findByName(name);
+    }
+
+
 }

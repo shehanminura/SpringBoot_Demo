@@ -29,4 +29,9 @@ public class CustomerController {
     public void updateCustomer(@RequestBody Customer customer){
         service.add(customer);
     }
+
+    @GetMapping("/find-by-name/{name}")
+    public List<Customer> findByName(@PathVariable String name){
+        return service.findByName(name);
+    }
 }
