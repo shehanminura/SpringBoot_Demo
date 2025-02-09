@@ -3,10 +3,7 @@ package edu.icet.ecom.controller;
 import edu.icet.ecom.dto.Customer;
 import edu.icet.ecom.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,14 @@ public class CustomerController {
 
     @PostMapping
     public void addCustomer(@RequestBody Customer customer){
+        service.add(customer);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable Integer id){
+        service.deleteStudentById(id);
+    }
+    @PutMapping
+    public void updateCustomer(@RequestBody Customer customer){
         service.add(customer);
     }
 }
